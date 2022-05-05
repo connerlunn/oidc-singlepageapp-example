@@ -1,6 +1,6 @@
-import { UserManager, WebStorageStateStore, User } from "oidc-client-ts";
+import { UserManager, WebStorageStateStore, User, SessionStatus } from "oidc-client-ts";
 
-export default class AuthService {
+class AuthService {
     private userManager: UserManager;
 
     constructor() {
@@ -38,13 +38,19 @@ export default class AuthService {
 
     public loginCallback(): Promise<void> {
         return this.userManager.signinRedirectCallback().then(function (user) {
-            //Redirect to Home view
         }).catch(function (err) {
             console.log(err);
-          });;
+        });
     }
 
     public logout(): Promise<void> {
         return this.userManager.signoutRedirect();
     }
+
+    public async isLoggedIn(): Promise<boolean> {
+        const user = await this.getUser();
+        return (user !== null && !user.expired);
+    }
 }
+
+export const authService = new AuthService();

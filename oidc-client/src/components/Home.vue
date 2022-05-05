@@ -1,6 +1,5 @@
 <template>
   <div class="Home">
-    <p v-if="isLoggedIn">User: {{ username }}</p>
     <button @click="login" v-if="!isLoggedIn">Login</button>
     <button @click="logout" v-if="isLoggedIn">Logout</button>
   </div>
@@ -8,39 +7,25 @@
 
 <script lang="ts">
 import { Vue } from 'vue-class-component';
-import AuthService from '@/services/AuthService';
-
-const auth = new AuthService();
+import { authService } from '@/services/AuthService';
 
 export default class Heme extends Vue {
 
-  public currentUser: string = '';
-  public accessTokenExpired: boolean | undefined = false;
   public isLoggedIn: boolean = false;
 
-  get username(): string {
-    return this.currentUser;
-  }
-
   public login() {
-    auth.login();
+    authService.login();
   }
 
   public logout() {
-    auth.logout();
+    authService.logout();
   }
 
   public mounted() {
-    auth.getUser().then((user) => {
-      if (user !== null) {
-        this.currentUser = user.profile.name!;
-        this.accessTokenExpired = user.expired;
-      }
-
+    authService.getUser().then((user) => {
       this.isLoggedIn = (user !== null && !user.expired);
     });
   }
-
 }
 </script>
 
