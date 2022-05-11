@@ -1,7 +1,7 @@
 ## About The Project
 
 Demo of a Single Page Application with an OIDC login and logout functionality. This project uses Auth0 as an OIDC provider.
-The frontend is Vue 3 making use of oidc-client-ts. Makes heavy use of code from this article https://www.jerriepelser.com/blog/using-auth0-with-vue-oidc-client-js/.
+Based on the inplementation from this article https://www.jerriepelser.com/blog/using-auth0-with-vue-oidc-client-js/.
 
 ### Built With
 * [Vue.js 3](https://vuejs.org/)
