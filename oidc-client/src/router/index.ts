@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CallbackView from '../views/CallbackView.vue'
-import AboutView from '../views/AboutView.vue'
+import AccountView from '../views/AccountView.vue'
 import PageNotFoundView from '@/views/PageNotFoundView.vue'
 
 import { authService } from '@/services/AuthService';
@@ -14,9 +14,9 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    component: AboutView,
+    path: '/account',
+    name: 'account',
+    component: AccountView,
     meta: {
       isSecure: true,
     }
