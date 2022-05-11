@@ -4,12 +4,12 @@ class AuthService {
     private userManager: UserManager;
 
     constructor() {
-        const AUTH0_DOMAIN: string = "";
+        const AUTH0_DOMAIN: string = process.env.VUE_APP_OIDC_DOMAIN;
         
         const settings: any = {
             userStore: new WebStorageStateStore({ store: window.localStorage }),
             authority: AUTH0_DOMAIN,
-            client_id: "",
+            client_id: process.env.VUE_APP_OIDC_CLIENT_ID,
             redirect_uri: "https://localhost:8080/callback",
             response_type: "code",
             scope: "openid profile",
