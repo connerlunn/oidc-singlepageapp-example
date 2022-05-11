@@ -4,23 +4,22 @@ class AuthService {
     private userManager: UserManager;
 
     constructor() {
-        const AUTH0_DOMAIN: string = "https://dev-k4ukwsq5.us.auth0.com"; // e.g. https://jerrie.auth0.com
-
+        const AUTH0_DOMAIN: string = "";
+        
         const settings: any = {
             userStore: new WebStorageStateStore({ store: window.localStorage }),
             authority: AUTH0_DOMAIN,
-            client_id: "nniVtMlLbzC9Fy5iVCkSYzEcN2MJTcId",
+            client_id: "",
             redirect_uri: "https://localhost:8080/callback",
             response_type: "code",
             scope: "openid profile",
-            post_logout_redirect_uri: "https://localhost:8080/",
             filterProtocolClaims: true,
             metadata: {
                 issuer: AUTH0_DOMAIN + "/",
                 token_endpoint: AUTH0_DOMAIN + "/oauth/token" ,
                 authorization_endpoint: AUTH0_DOMAIN + "/authorize",
                 userinfo_endpoint: AUTH0_DOMAIN + "/userinfo",
-                end_session_endpoint: AUTH0_DOMAIN + "/v2/logout?",
+                end_session_endpoint: AUTH0_DOMAIN + "/v2/logout?returnTo=https://localhost:8080/",
                 jwks_uri: AUTH0_DOMAIN + "/.well-known/jwks.json",
             }
         };

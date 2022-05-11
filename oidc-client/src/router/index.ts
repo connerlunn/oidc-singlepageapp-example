@@ -38,7 +38,6 @@ const router = createRouter({
   routes
 })
 
-
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.isSecure)) {
     // this route requires auth, check if logged in
