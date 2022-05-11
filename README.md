@@ -34,4 +34,4 @@ Based on the inplementation from this article https://www.jerriepelser.com/blog/
 ## Roadmap
 
 - [ ] Flesh out readme setup instructions
-- [ ] Change About page to Account and make a basic user profile page
+- [ ] Make a basic user profile page
