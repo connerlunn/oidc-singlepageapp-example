@@ -16,7 +16,7 @@ Based on the implementation from this article https://www.jerriepelser.com/blog/
 
 ### Installation
 
-1. Setup a free developer account at [https://auth0.com](https://auth0.com/)
+1. Setup a free developer account at [https://auth0.com](https://auth0.com/) and create a demo single page app application. See docs for guide this is not an exhaustive oidc tutorial.
 2. Clone the repo
    ```sh
    git clone https://github.com/github_username/repo_name.git
@@ -25,11 +25,15 @@ Based on the implementation from this article https://www.jerriepelser.com/blog/
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+4. Enter your OIDC ClientId and Domain values in `.env`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   VUE_APP_OIDC_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXX
+   VUE_APP_OIDC_DOMAIN=https://youroidcdomain.com
    ```
-   
+3. Run the application
+   ```sh
+   npm run serve
+   ```
 <!-- ROADMAP -->
 ## Roadmap
 
