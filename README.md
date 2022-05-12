@@ -35,3 +35,5 @@ Based on the implementation from this article https://www.jerriepelser.com/blog/
 
 - [ ] Flesh out readme setup instructions
 - [ ] Make a basic user profile page
+- [ ] Use cookie to store access token instead of local storage
+- [ ] Add refresh token flows
